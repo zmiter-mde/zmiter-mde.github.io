@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="snakeApp">
+<head>
+  <meta charset="utf-8">
+  <title>Snake</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+
+<body ng-controller="FieldCtrl" ng-keypress="changeDirection($event)" class="container">
+    <div class="info">
+        <div>
+            Your score is <span>{{score}}</span><br/>
+            Press "Start" to start a new game
+        </div>
+        <br/>
+        <div ng-show="gameOver">
+            Game over
+        </div>
+    </div>
+    <table>
+        <tr ng-repeat="row in field">
+            <td ng-repeat="cell in row">
+                <div class="cell" ng-show="cell.val > 0">
+
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="start(true)">Start</button>
+</body>
+</html>
