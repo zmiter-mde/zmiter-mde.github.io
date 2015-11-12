@@ -49,10 +49,6 @@
                         if ($scope.direction != 'DOWN')
                             $scope.direction = 'UP';
                         break;
-                    case 1094:
-                        if ($scope.direction != 'DOWN')
-                            $scope.direction = 'UP';
-                        break;
                     case 97:
                         if ($scope.direction != 'RIGHT')
                             $scope.direction = 'LEFT';
@@ -61,21 +57,25 @@
                         if ($scope.direction != 'UP')
                             $scope.direction = 'DOWN';
                         break;
-                    case 1099:
-                        if ($scope.direction != 'UP')
-                            $scope.direction = 'DOWN';
-                        break;
                     case 100:
                         if ($scope.direction != 'LEFT')
                             $scope.direction = 'RIGHT';
+                        break;
+                    case 1099:
+                        if ($scope.direction != 'UP')
+                            $scope.direction = 'DOWN';
                         break;
                     case 1074:
                         if ($scope.direction != 'LEFT')
                             $scope.direction = 'RIGHT';
                         break;
                     case 1092:
-                        if ($scope.direction != 'LEFT')
-                            $scope.direction = 'RIGHT';
+                        if ($scope.direction != 'RIGHT')
+                            $scope.direction = 'LEFT';
+                        break;
+                    case 1094:
+                        if ($scope.direction != 'DOWN')
+                            $scope.direction = 'UP';
                         break;
                     default:
                         console.log("Wrong key. Use w, a, s, d)");
