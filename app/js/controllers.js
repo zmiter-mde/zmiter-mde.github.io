@@ -37,6 +37,7 @@
             }
 
             function move() {
+                $scope.direction = $scope.nextDirection;
                 switch ($scope.direction) {
                     case 'LEFT':
                         moveLeft();
@@ -58,35 +59,35 @@
                 switch ($event.charCode) {
                     case 119:
                         if ($scope.direction != 'DOWN')
-                            $scope.direction = 'UP';
+                            $scope.nextDirection = 'UP';
                         break;
                     case 97:
                         if ($scope.direction != 'RIGHT')
-                            $scope.direction = 'LEFT';
+                            $scope.nextDirection = 'LEFT';
                         break;
                     case 115:
                         if ($scope.direction != 'UP')
-                            $scope.direction = 'DOWN';
+                            $scope.nextDirection = 'DOWN';
                         break;
                     case 100:
                         if ($scope.direction != 'LEFT')
-                            $scope.direction = 'RIGHT';
+                            $scope.nextDirection = 'RIGHT';
                         break;
                     case 1099:
                         if ($scope.direction != 'UP')
-                            $scope.direction = 'DOWN';
+                            $scope.nextDirection = 'DOWN';
                         break;
                     case 1074:
                         if ($scope.direction != 'LEFT')
-                            $scope.direction = 'RIGHT';
+                            $scope.nextDirection = 'RIGHT';
                         break;
                     case 1092:
                         if ($scope.direction != 'RIGHT')
-                            $scope.direction = 'LEFT';
+                            $scope.nextDirection = 'LEFT';
                         break;
                     case 1094:
                         if ($scope.direction != 'DOWN')
-                            $scope.direction = 'UP';
+                            $scope.nextDirection = 'UP';
                         break;
                     default:
                         console.log("Wrong key. Use w, a, s, d)");
