@@ -6,10 +6,21 @@
         .controller('FieldCtrl', function ($scope, $interval) {
             $scope.start = start;
             $scope.stop = stop;
+            $scope.startStop = startStop;
             $scope.move = move;
             $scope.changeDirection = changeDirection;
 
             init();
+
+            function startStop() {
+                if ($scope.intervalId == null) {
+                    start(true);
+                    $scope.startStopText = 'Stop';
+                } else {
+                    stop(true);
+                    $scope.startStopText = 'Start';
+                }
+            }
 
             function start(newGame) {
                 console.log("Started moving");
@@ -220,6 +231,7 @@
                 $scope.interval = 1000;
                 $scope.score = 0;
                 $scope.gameOver = false;
+                $scope.startStopText = 'Start';
 
                 createMeal();
             }
