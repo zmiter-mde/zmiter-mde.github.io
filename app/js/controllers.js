@@ -213,7 +213,7 @@
             function resetSpeed(){
                 $scope.stop(false);
                 var fieldSize = $scope.size.height * $scope.size.width;
-                $scope.interval = Math.trunc((1000 * (fieldSize - 6 * $scope.score) / fieldSize));
+                $scope.interval = $scope.interval - (52 - $scope.score * 2);
                 $scope.start(false);
             }
 
@@ -229,7 +229,7 @@
                 $scope.size = {width: 10, height: 20};
                 $scope.field = createField($scope.size.height, $scope.size.width);
                 $scope.intervalId = null;
-                $scope.interval = 1000;
+                $scope.interval = 650;
                 $scope.score = 0;
                 $scope.gameOver = false;
                 $scope.startStopText = 'Start';
