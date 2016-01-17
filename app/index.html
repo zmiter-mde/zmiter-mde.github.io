@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="en" ng-app="snakeApp">
 <head>
-  <meta charset="utf-8">
-  <title>Snake</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="js/controllers.js"></script>
+    <meta charset="utf-8">
+    <title>Snake</title>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bower_components/angular/angular.js"></script>
+
+    <script src="js/controllers.js"></script>
 </head>
 
-<body ng-controller="FieldCtrl" ng-keypress="changeDirection($event)" class="container">
+<body ng-controller="FieldCtrl" ng-keydown="changeDirection($event)" class="container">
     <div class="info">
         <div>
             Your score is <span>{{score}}</span><br/>
-            Press "Start" to start a new game<br/>
-            Use W, S, D, A to move the snake
+            Press "Start" to start a new game
         </div>
         <br/>
         <div ng-show="gameOver">

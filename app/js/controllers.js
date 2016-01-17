@@ -55,43 +55,17 @@
             }
 
             function changeDirection($event) {
-                console.log($event.charCode);
-                switch ($event.charCode) {
-                    case 119:
-                        if ($scope.direction != 'DOWN')
-                            $scope.nextDirection = 'UP';
-                        break;
-                    case 97:
-                        if ($scope.direction != 'RIGHT')
-                            $scope.nextDirection = 'LEFT';
-                        break;
-                    case 115:
-                        if ($scope.direction != 'UP')
-                            $scope.nextDirection = 'DOWN';
-                        break;
-                    case 100:
-                        if ($scope.direction != 'LEFT')
-                            $scope.nextDirection = 'RIGHT';
-                        break;
-                    case 1099:
-                        if ($scope.direction != 'UP')
-                            $scope.nextDirection = 'DOWN';
-                        break;
-                    case 1074:
-                        if ($scope.direction != 'LEFT')
-                            $scope.nextDirection = 'RIGHT';
-                        break;
-                    case 1092:
-                        if ($scope.direction != 'RIGHT')
-                            $scope.nextDirection = 'LEFT';
-                        break;
-                    case 1094:
-                        if ($scope.direction != 'DOWN')
-                            $scope.nextDirection = 'UP';
-                        break;
-                    default:
-                        console.log("Wrong key. Use w, a, s, d)");
-                        break;
+                console.log($event.keyCode);
+                if (($event.keyCode === 87 || $event.keyCode === 38) && $scope.direction != 'DOWN') {
+                    $scope.nextDirection = 'UP';
+                } else if (($event.keyCode === 65 || $event.keyCode === 37) && $scope.direction != 'RIGHT') {
+                    $scope.nextDirection = 'LEFT';
+                } else if (($event.keyCode === 83 || $event.keyCode === 40) && $scope.direction != 'UP') {
+                    $scope.nextDirection = 'DOWN';
+                } else if (($event.keyCode === 68 || $event.keyCode === 39) && $scope.direction != 'LEFT') {
+                    $scope.nextDirection = 'RIGHT';
+                } else {
+                    console.log("Wrong key. Use w, a, s, d)");
                 }
             }
 
